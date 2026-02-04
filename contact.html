@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - NewGenre</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:linear-gradient(180deg,#ffffff 0%,#cfe9ff 45%,#0b1d3a 100%);background-size:100% 200%;transition:background-position 1.2s ease;color:#0d0d0d;}
+nav{position:fixed;top:0;width:100%;padding:30px 60px;display:flex;justify-content:space-between;align-items:center;z-index:100;background:rgba(34,34,34,0.9);}
+nav ul{display:flex;gap:30px;list-style:none;}
+nav li{font-size:14px;opacity:0;transform:translateY(-20px);animation:navFade 0.6s forwards;cursor:pointer;transition: transform 0.3s, color 0.3s;}
+nav li:nth-child(1){animation-delay:.2s}nav li:nth-child(2){animation-delay:.3s}nav li:nth-child(3){animation-delay:.4s}nav li:nth-child(4){animation-delay:.5s}nav li:nth-child(5){animation-delay:.6s}nav li:nth-child(6){animation-delay:.7s}nav li:nth-child(7){animation-delay:.8s;}
+nav li:hover{color:#f39c12;transform:translateY(-5px) scale(1.1);}
+@keyframes navFade{to{opacity:1; transform:translateY(0);}}
+section{min-height:100vh;padding:160px 60px 80px;position:relative;}
+.center{max-width:900px;text-align:center;}
+.word span{opacity: 0; display: inline-block; transform: translateY(40px) scale(0.95); animation: wordFadeUp 0.8s forwards;}
+@keyframes wordFadeUp{to{opacity:1; transform:translateY(0) scale(1);}}
+.btn{display:inline-block;margin-top:40px;padding:14px 30px;border-radius:30px;background:rgba(255,255,255,0.6);font-size:14px;}
+.projects{border-top:1px solid rgba(0,0,0,0.1);padding-top:80px;}
+.project{display:grid;grid-template-columns:1fr 1.5fr;gap:60px;margin-bottom:120px;align-items:center;}
+.project img{width:100%;border-radius:16px;opacity:0;transform:translateY(40px) scale(0.95);transition:1.2s ease;}
+.project img.show{opacity:1;transform:translateY(0) scale(1);}
+.tag{display:inline-block;margin-top:16px;margin-right:10px;padding:6px 14px;font-size:12px;border-radius:20px;background:#f1f1f1;}
+.hero-img{position:absolute;top:10%;right:5%;width:250px;opacity:0.15;z-index:0;}
+.contact-info{position:relative;z-index:10;}
+
+/* WhatsApp Button */
+.whatsapp-btn{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 9999;
+  text-decoration: none;
+  font-size: 28px;
+  animation: pulse 2s infinite;
+}
+.whatsapp-btn img{width:30px;height:30px;}
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.15);}
+  100%{transform:scale(1);}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">NEWGENRE</div>
+  <ul>
+    <li><a href="work.html" style="color:inherit;text-decoration:none;">Work</a></li>
+    <li><a href="approach.html" style="color:inherit;text-decoration:none;">Approach</a></li>
+    <li><a href="services.html" style="color:inherit;text-decoration:none;">Services</a></li>
+    <li><a href="news.html" style="color:inherit;text-decoration:none;">News</a></li>
+    <li><a href="about.html" style="color:inherit;text-decoration:none;">About</a></li>
+    <li><a href="join.html" style="color:inherit;text-decoration:none;">Join</a></li>
+    <li><a href="contact.html" style="color:inherit;text-decoration:none;">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Decorative hero image -->
+<img class="hero-img" src="https://images.unsplash.com/photo-1506784365847-bbad939e9335?q=80&w=400" alt="decorative design">
+
+<section>
+  <div class="center contact-info">
+    <h1 class="word" style="font-family:'Playfair Display',serif;font-size:64px;line-height:1.1;">
+      Contact Us
+    </h1>
+    <p>Get in touch with us for inquiries, collaborations, or support. We’d love to hear from you.</p>
+  </div>
+</section>
+
+<section class="projects contact-info">
+  <div class="project">
+    <div>
+      <h3>Email</h3>
+      <p>Reach out to our team directly via email: <b>aryamirdha@newgenre.com</b></p>
+      <span class="tag">Email</span>
+      <span class="tag">Support</span>
+    </div>
+    <img src="https://images.unsplash.com/photo-1559526324-593bc073d938?q=80&w=1200" alt="email illustration">
+  </div>
+
+  <div class="project">
+    <div>
+      <h3>Location</h3>
+      <p>Baghajatin Park Main Road, Sub-Registry Office Building, 1st Floor, District - Darjeeling, Siliguri, West Bengal 734001</p>
+      <span class="tag">Studio</span>
+      <span class="tag">Location</span>
+    </div>
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200" alt="office illustration">
+  </div>
+
+  <div class="project">
+    <div>
+      <h3>Call Us</h3>
+      <p>Phone: +91 7001267393</p>
+      <span class="tag">Phone</span>
+      <span class="tag">Support</span>
+    </div>
+    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200" alt="phone illustration">
+  </div>
+</section>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/917001267393" target="_blank" class="whatsapp-btn">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+<script>
+function splitWords(){
+  document.querySelectorAll(".word").forEach(el=>{
+    const words=el.innerText.split(" ");
+    el.innerHTML=words.map((w,i)=>`<span style="animation-delay:${i*0.15}s">${w}&nbsp;</span>`).join("");
+  });
+}
+splitWords();
+
+const images=document.querySelectorAll(".project img, .hero-img");
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("show");}});
+},{threshold:0.2});
+images.forEach(img=>observer.observe(img));
+
+window.addEventListener("scroll",()=>{
+  const vh=window.innerHeight;
+  const pos=Math.min(window.scrollY/(vh*2)*100,100);
+  document.body.style.backgroundPosition=`50% ${pos}%`;
+});
+</script>
+
+</body>
+</html>

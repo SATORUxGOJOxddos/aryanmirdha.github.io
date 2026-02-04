@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Approach - NewGenre</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:linear-gradient(180deg,#ffffff 0%,#cfe9ff 45%,#0b1d3a 100%);background-size:100% 200%;transition:background-position 1.2s ease;color:#0d0d0d;}
+nav{position:fixed;top:0;width:100%;padding:30px 60px;display:flex;justify-content:space-between;align-items:center;z-index:100;background:rgba(34,34,34,0.9);}
+nav ul{display:flex;gap:30px;list-style:none;}
+nav li{font-size:14px;opacity:0;transform:translateY(-20px);animation:navFade 0.6s forwards;cursor:pointer;transition: transform 0.3s, color 0.3s;}
+nav li:nth-child(1){animation-delay:.2s}nav li:nth-child(2){animation-delay:.3s}nav li:nth-child(3){animation-delay:.4s}nav li:nth-child(4){animation-delay:.5s}nav li:nth-child(5){animation-delay:.6s}nav li:nth-child(6){animation-delay:.7s}nav li:nth-child(7){animation-delay:.8s;}
+nav li:hover{color:#f39c12;transform:translateY(-5px) scale(1.1);}
+@keyframes navFade{to{opacity:1; transform:translateY(0);}}
+section{min-height:100vh;padding:160px 60px 80px;}
+.center{max-width:900px}
+.word span{opacity: 0; display: inline-block; transform: translateY(40px) scale(0.95); animation: wordFadeUp 0.8s forwards;}
+@keyframes wordFadeUp{to{opacity:1; transform:translateY(0) scale(1);}}
+.btn{display:inline-block;margin-top:40px;padding:14px 30px;border-radius:30px;background:rgba(255,255,255,0.6);font-size:14px;}
+.projects{border-top:1px solid rgba(0,0,0,0.1);padding-top:80px;}
+.project{display:grid;grid-template-columns:1fr 1.5fr;gap:60px;margin-bottom:120px;}
+.project img{width:100%;border-radius:16px;opacity:0;transform:translateY(40px) scale(0.95);transition:1.2s ease;}
+.project img.show{opacity:1;transform:translateY(0) scale(1);}
+.tag{display:inline-block;margin-top:16px;margin-right:10px;padding:6px 14px;font-size:12px;border-radius:20px;background:#f1f1f1;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">NEWGENRE</div>
+  <ul>
+    <li><a href="work.html" style="color:inherit;text-decoration:none;">Work</a></li>
+    <li><a href="approach.html" style="color:inherit;text-decoration:none;">Approach</a></li>
+    <li><a href="services.html" style="color:inherit;text-decoration:none;">Services</a></li>
+    <li><a href="news.html" style="color:inherit;text-decoration:none;">News</a></li>
+    <li><a href="about.html" style="color:inherit;text-decoration:none;">About</a></li>
+    <li><a href="join.html" style="color:inherit;text-decoration:none;">Join</a></li>
+    <li><a href="contact.html" style="color:inherit;text-decoration:none;">Contact</a></li>
+  </ul>
+</nav>
+
+<section>
+  <div class="center">
+    <h1 class="word" style="font-family:'Playfair Display',serif;font-size:64px;line-height:1.1;">
+      Our Approach
+    </h1>
+    <p>We combine creativity, strategy, and technology to deliver innovative solutions. Our workflow ensures efficiency, collaboration, and exceptional results for every project.</p>
+  </div>
+</section>
+
+<section class="projects">
+  <div class="project">
+    <div>
+      <h3>Strategy</h3>
+      <p>We research, plan, and define clear strategies to align with your business goals.</p>
+      <span class="tag">Planning</span>
+    </div>
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200">
+  </div>
+
+  <div class="project">
+    <div>
+      <h3>Design & Execution</h3>
+      <p>From concepts to final product, we craft user-centered designs that stand out.</p>
+      <span class="tag">Design</span>
+      <span class="tag">Execution</span>
+    </div>
+    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200">
+  </div>
+</section>
+
+<script>
+function splitWords(){
+  document.querySelectorAll(".word").forEach(el=>{
+    const words=el.innerText.split(" ");
+    el.innerHTML=words.map((w,i)=>`<span style="animation-delay:${i*0.15}s">${w}&nbsp;</span>`).join("");
+  });
+}
+splitWords();
+
+const images=document.querySelectorAll(".project img");
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("show");}});
+},{threshold:0.3});
+images.forEach(img=>observer.observe(img));
+
+window.addEventListener("scroll",()=>{
+  const vh=window.innerHeight;
+  const pos=Math.min(window.scrollY/(vh*2)*100,100);
+  document.body.style.backgroundPosition=`50% ${pos}%`;
+});
+</script>
+
+</body>
+</html>
