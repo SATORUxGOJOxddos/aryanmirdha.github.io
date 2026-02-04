@@ -3,50 +3,160 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Join - NewGenre</title>
+<title>Join - HackerSite</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="shortcut icon" href="favicon.png" type="x-icon">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:linear-gradient(180deg,#ffffff 0%,#cfe9ff 45%,#0b1d3a 100%);background-size:100% 200%;transition:background-position 1.2s ease;color:#0d0d0d;}
-nav{position:fixed;top:0;width:100%;padding:30px 60px;display:flex;justify-content:space-between;align-items:center;z-index:100;background:rgba(34,34,34,0.9);}
-nav ul{display:flex;gap:30px;list-style:none;}
-nav li{font-size:14px;opacity:0;transform:translateY(-20px);animation:navFade 0.6s forwards;cursor:pointer;transition: transform 0.3s, color 0.3s;}
-nav li:nth-child(1){animation-delay:.2s}nav li:nth-child(2){animation-delay:.3s}nav li:nth-child(3){animation-delay:.4s}nav li:nth-child(4){animation-delay:.5s}nav li:nth-child(5){animation-delay:.6s}nav li:nth-child(6){animation-delay:.7s}nav li:nth-child(7){animation-delay:.8s;}
-nav li:hover{color:#f39c12;transform:translateY(-5px) scale(1.1);}
-@keyframes navFade{to{opacity:1; transform:translateY(0);}}
-section{min-height:100vh;padding:160px 60px 80px;}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:linear-gradient(180deg,#ffffff 0%,#cfe9ff 45%,#0b1d3a 100%);
+  background-size:100% 200%;
+  transition:background-position 1.2s ease;
+  color:#0d0d0d;
+}
+
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:30px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:100;
+  background:rgba(34,34,34,0.9);
+}
+
+nav ul{
+  display:flex;
+  gap:30px;
+  list-style:none;
+}
+
+nav li{
+  font-size:14px;
+  opacity:0;
+  transform:translateY(-20px);
+  animation:navFade 0.6s forwards;
+  cursor:pointer;
+  transition: transform 0.3s, color 0.3s;
+}
+
+nav li:nth-child(1){animation-delay:.2s}
+nav li:nth-child(2){animation-delay:.3s}
+nav li:nth-child(3){animation-delay:.4s}
+nav li:nth-child(4){animation-delay:.5s}
+nav li:nth-child(5){animation-delay:.6s}
+nav li:nth-child(6){animation-delay:.7s}
+nav li:nth-child(7){animation-delay:.8s}
+
+nav li:hover{
+  color:#f39c12;
+  transform:translateY(-5px) scale(1.1);
+}
+
+@keyframes navFade{
+  to{opacity:1; transform:translateY(0);}
+}
+
+section{
+  min-height:100vh;
+  padding:160px 60px 80px;
+}
+
 .center{max-width:900px}
-.word span{opacity: 0; display: inline-block; transform: translateY(40px) scale(0.95); animation: wordFadeUp 0.8s forwards;}
-@keyframes wordFadeUp{to{opacity:1; transform:translateY(0) scale(1);}}
-.btn{display:inline-block;margin-top:40px;padding:14px 30px;border-radius:30px;background:rgba(255,255,255,0.6);font-size:14px;}
-.projects{border-top:1px solid rgba(0,0,0,0.1);padding-top:80px;}
-.project{display:grid;grid-template-columns:1fr 1.5fr;gap:60px;margin-bottom:120px;}
-.project img{width:100%;border-radius:16px;opacity:0;transform:translateY(40px) scale(0.95);transition:1.2s ease;}
-.project img.show{opacity:1;transform:translateY(0) scale(1);}
-.tag{display:inline-block;margin-top:16px;margin-right:10px;padding:6px 14px;font-size:12px;border-radius:20px;background:#f1f1f1;}
+
+.word span{
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(40px) scale(0.95);
+  animation: wordFadeUp 0.8s forwards;
+}
+
+@keyframes wordFadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+.projects{
+  border-top:1px solid rgba(0,0,0,0.1);
+  padding-top:80px;
+}
+
+.project{
+  display:grid;
+  grid-template-columns:1fr 1.5fr;
+  gap:60px;
+  margin-bottom:120px;
+}
+
+.project img{
+  width:100%;
+  border-radius:16px;
+  opacity:0;
+  transform:translateY(40px) scale(0.95);
+  transition:1.2s ease;
+}
+
+.project img.show{
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+
+.tag{
+  display:inline-block;
+  margin-top:16px;
+  margin-right:10px;
+  padding:6px 14px;
+  font-size:12px;
+  border-radius:20px;
+  background:#f1f1f1;
+}
+
+input,select,button{
+  width:100%;
+  padding:14px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  margin-top:12px;
+}
+
+button{
+  background:#0b1d3a;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+}
 </style>
 </head>
+
 <body>
 
 <nav>
-  <div class="logo">NEWGENRE</div>
+  <div class="logo">HACKERSITE</div>
   <ul>
-    <li><a href="work.html" style="color:inherit;text-decoration:none;">Work</a></li>
-    <li><a href="approach.html" style="color:inherit;text-decoration:none;">Approach</a></li>
-    <li><a href="services.html" style="color:inherit;text-decoration:none;">Services</a></li>
-    <li><a href="news.html" style="color:inherit;text-decoration:none;">News</a></li>
-    <li><a href="about.html" style="color:inherit;text-decoration:none;">About</a></li>
-    <li><a href="join.html" style="color:inherit;text-decoration:none;">Join</a></li>
-    <li><a href="contact.html" style="color:inherit;text-decoration:none;">Contact</a></li>
+    <li><a href="work.html" style="color:inherit; text-decoration:none;">Labs</a></li>
+    <li><a href="approach.html" style="color:inherit; text-decoration:none;">Approach</a></li>
+    <li><a href="services.html" style="color:inherit; text-decoration:none;">Services</a></li>
+    <li><a href="news.html" style="color:inherit; text-decoration:none;">Updates</a></li>
+    <li><a href="about.html" style="color:inherit; text-decoration:none;">About</a></li>
+    <li><a href="join.html" style="color:inherit; text-decoration:none;">Join</a></li>
+    <li><a href="contact.html" style="color:inherit; text-decoration:none;">Contact</a></li>
   </ul>
 </nav>
 
 <section>
   <div class="center">
     <h1 class="word" style="font-family:'Playfair Display',serif;font-size:64px;line-height:1.1;">
-      Join Our Team
+      Join Our HackerSite Team
     </h1>
-    <p>We are always looking for talented individuals who are passionate about design, technology, and innovation. Become part of our creative studio.</p>
+    <p>We are looking for talented individuals passionate about cybersecurity, ethical hacking, and innovation.</p>
   </div>
 </section>
 
@@ -54,36 +164,59 @@ section{min-height:100vh;padding:160px 60px 80px;}
   <div class="project">
     <div>
       <h3>Current Openings</h3>
-      <p>Check out our current positions and find the perfect role that matches your skills.</p>
+      <p>Find roles that match your skills and expertise.</p>
       <span class="tag">Career</span>
-      <span class="tag">Opportunities</span>
     </div>
     <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200">
   </div>
+</section>
 
-  <div class="project">
-    <div>
-      <h3>Culture & Benefits</h3>
-      <p>Join a collaborative team with a focus on creativity, learning, and growth.</p>
-      <span class="tag">Culture</span>
-      <span class="tag">Team</span>
-    </div>
-    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200">
+<!-- GOOGLE FORM ENROLL SECTION -->
+<section>
+  <div class="center">
+    <h2 style="font-family:'Playfair Display',serif;">Enroll Now</h2>
+
+   <form action="https://docs.google.com/forms/d/e/1FAIpQLScnB4kOQ-sTB52bqBwiJGKtaUlyTduBnQyWedAdbuRMaAwx0A/formResponse" method="POST" target="_self">
+  
+  <!-- Name Field -->
+  <input type="text" name="entry.XXXXXXX" placeholder="Name" required>
+
+  <!-- Email Field -->
+  <input type="email" name="entry.YYYYYYY" placeholder="Email" required>
+
+  <!-- Role Dropdown -->
+  <select name="entry.ZZZZZZZ" required>
+    <option value="">Select Role</option>
+    <option value="Student">Student</option>
+    <option value="Admin">Admin</option>
+    <option value="User">User</option>
+    <option value="Tester">Tester</option>
+  </select>
+
+  <button type="submit">Submit</button>
+</form>
+
+
+    <p style="margin-top:20px;color:green;">Your enrollment will be saved directly to Google Sheets.</p>
   </div>
 </section>
 
 <script>
 function splitWords(){
   document.querySelectorAll(".word").forEach(el=>{
-    const words=el.innerText.split(" ");
-    el.innerHTML=words.map((w,i)=>`<span style="animation-delay:${i*0.15}s">${w}&nbsp;</span>`).join("");
+    const words = el.innerText.split(" ");
+    el.innerHTML = words.map((w,i)=>`<span style="animation-delay:${i*0.15}s">${w}&nbsp;</span>`).join("");
   });
 }
 splitWords();
 
 const images=document.querySelectorAll(".project img");
 const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("show");}});
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
 },{threshold:0.3});
 images.forEach(img=>observer.observe(img));
 
